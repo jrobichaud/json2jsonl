@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+import json
+import argparse
+import sys
+
+parser = argparse.ArgumentParser(description='Convert json list to jsonl')
+parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
+parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
+args = parser.parse_args()
+
+json_list = json.loads(args.infile.read())
+output_file = args.outfile
+for entry in json_list:
+    output_file.write(json.dumps(entry))
+    output_file.write('\n')
+output_file.close()
