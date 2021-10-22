@@ -17,5 +17,11 @@ to `jsonl` format
 ## Usage
 
 ```bash
-$ ./json2jsonl.py input_file.json output_file.jsonl
+$ json2jsonl input_file.json output_file.jsonl
+```
+
+## Installation
+
+```bash
+$ pip install git+https://github.com/jrobichaud/json2jsonl.git
 ```
